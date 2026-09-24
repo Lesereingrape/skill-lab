@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "skilllab"
+version = "0.1.0"
+description = "A CPU-only, dependency-free study of a Voyager-style self-evolving skill library: a bounded-BFS agent on a deterministic keyworld distils generalised reusable skills from its own verified plans and reuses them to cut planning cost and raise budgeted solve-rate, with a reuse-on/off ablation and exact-simulator soundness checks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Lesereingrape" }]
+keywords = ["agents", "skill-library", "voyager", "self-improvement", "planning", "search", "stripes"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.14,<0.15"]
+
+[project.scripts]
+skilllab = "skilllab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I", "UP", "RUF", "B", "C4", "SIM", "FURB"]
+ignore = ["SIM105"]
