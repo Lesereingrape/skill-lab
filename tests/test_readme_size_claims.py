@@ -52,3 +52,21 @@ def test_the_quickstart_seed_count_matches_the_study():
     m = re.search(r"full (\d+)-seed study", _prose())
     assert m, "the Quickstart no longer states the seed count"
     assert int(m.group(1)) == len(DATA["config"]["seeds"]), m.group(0)
+
+
+def test_the_rerun_note_names_the_runtime_the_artifact_records():
+    """Of the two runtimes the diff sentence pairs, only the published one is checkable."""
+    published = _current(r"published ([\d.]+)s")
+    assert float(published) == DATA["runtime_sec"], (
+        f"README says the published run took {published}s, "
+        f"results/skills.json records {DATA['runtime_sec']}s")
+
+
+def test_the_rerun_recipe_writes_a_relative_scratch_file():
+    """`--out /tmp/...` is not one path across shells, so the recipe must not use it."""
+    prose = _prose()
+    assert "--out /tmp/" not in prose, (
+        "the rerun recipe is back to a /tmp path; Git-Bash rewrites it before the CLI "
+        "sees it, so use a relative scratch file")
+    assert "--out again-check.json" in prose, (
+        "the rerun recipe no longer names the relative scratch file it documents")

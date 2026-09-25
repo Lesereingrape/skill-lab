@@ -137,11 +137,17 @@ does not need a thread-count caveat: the same code on the same seed stream gives
 same digits on any machine. Re-derive it rather than trusting that sentence:
 
 ```bash
-python experiments/run_study.py --out /tmp/again.json   # leaves results/ untouched
+python experiments/run_study.py --out again-check.json   # leaves results/ untouched
 ```
+
+The scratch file is relative on purpose: Git-Bash rewrites a `/tmp/...` argument into
+`%TEMP%` before the CLI ever sees it, while cmd and PowerShell pass it through and leave the
+tool to create `<drive>:\tmp`.
 
 The diff we ran found one differing field out of the whole artifact: `runtime_sec`
 (35.9s against the published 34.5s). The three per-seed traces, the 32-point
 curve, the difficulty table and the environment block came back identical - from a
 process whose string hash seed differed from the one that produced the committed
-file, which is the property the republication was about.
+file, which is the property the republication was about. Of that pair of runtimes a
+test can only read back the published one, and does; the scratch file was thrown away,
+so 35.9 is a log of a run rather than a number to check.
