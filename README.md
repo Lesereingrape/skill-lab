@@ -117,3 +117,31 @@ reads each one out of [`results/skills.json`](results/skills.json), so a third
 republication that moves the headline has to move the sentence with it or fail
 CI — and it also insists the quoted old figures still differ from the current
 ones, so the note cannot be flattened into claiming nothing moved.
+
+## Reproducing
+
+Nothing in the `Results` block is typed by hand, and the paragraph above it is now
+guarded too:
+
+- `tests/test_readme_matches_results.py` asserts the block equals
+  `make_report.build(results/skills.json)` byte for byte.
+- `tests/test_artifact_is_internally_consistent.py` recomputes every mean in `summary`
+  from the raw `per_seed` traces it is supposed to be reduced from.
+- `tests/test_readme_size_claims.py` checks the republished-figure note ("11.8% (now
+  13.3%)") and the seed count against the committed artifact.
+- `tests/test_hash_seed_determinism.py` replays part of the curriculum in two
+  subprocesses under different `PYTHONHASHSEED` values.
+
+Search cost here is an integer count, so unlike a float-reduction study this artifact
+does not need a thread-count caveat: the same code on the same seed stream gives the
+same digits on any machine. Re-derive it rather than trusting that sentence:
+
+```bash
+python experiments/run_study.py --out /tmp/again.json   # leaves results/ untouched
+```
+
+The diff we ran found one differing field out of the whole artifact: `runtime_sec`
+(35.9s against the published 34.5s). The three per-seed traces, the 32-point
+curve, the difficulty table and the environment block came back identical - from a
+process whose string hash seed differed from the one that produced the committed
+file, which is the property the republication was about.
