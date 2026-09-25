@@ -111,3 +111,9 @@ slice of the curriculum in two subprocesses under different hash seeds and fails
 reported figure differs. Nothing about the domain, planner, budget or curriculum
 changed — only the tie-break became deterministic, and every published figure moved
 with it, in both directions.
+
+Those "now" figures are not remembered, they are checked: `tests/test_readme_size_claims.py`
+reads each one out of [`results/skills.json`](results/skills.json), so a third
+republication that moves the headline has to move the sentence with it or fail
+CI — and it also insists the quoted old figures still differ from the current
+ones, so the note cannot be flattened into claiming nothing moved.
