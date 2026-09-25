@@ -128,7 +128,9 @@ guarded too:
 - `tests/test_artifact_is_internally_consistent.py` recomputes every mean in `summary`
   from the raw `per_seed` traces it is supposed to be reduced from.
 - `tests/test_readme_size_claims.py` checks the republished-figure note ("11.8% (now
-  13.3%)") and the seed count against the committed artifact.
+  13.3%)"), the seed count and the published runtime against the committed artifact, and
+  runs the `demo` command the Quickstart advertises to confirm it still answers in the
+  seconds its comment promises.
 - `tests/test_hash_seed_determinism.py` replays part of the curriculum in two
   subprocesses under different `PYTHONHASHSEED` values.
 

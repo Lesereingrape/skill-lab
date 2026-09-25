@@ -70,3 +70,33 @@ def test_the_rerun_recipe_writes_a_relative_scratch_file():
         "sees it, so use a relative scratch file")
     assert "--out again-check.json" in prose, (
         "the rerun recipe no longer names the relative scratch file it documents")
+
+
+def test_the_demo_the_quickstart_advertises_still_finishes_when_it_says():
+    """The one budget in this file that a test can measure instead of take on trust.
+
+    `demo` is the first command a reader types, and the comment promises it answers in
+    seconds. Running it checks both halves: that the command still works, and that the
+    unit the comment names has not quietly become minutes.
+    """
+    import contextlib
+    import io
+    import sys
+    import time
+
+    from skilllab import cli
+
+    m = re.search(r"cli demo\s+# [^\n]*?, (seconds|minutes)\b", _prose())
+    assert m, "the Quickstart no longer budgets the demo run; drop this guard with the claim"
+    argv, started = sys.argv, time.perf_counter()
+    sys.argv = ["skilllab", "demo"]
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            cli.main()
+    finally:
+        sys.argv = argv
+    elapsed = time.perf_counter() - started
+    limit = 60.0 if m.group(1) == "seconds" else 3600.0
+    assert elapsed < limit, (
+        f"the Quickstart promises {m.group(1)} for one seeded curriculum; it took "
+        f"{elapsed:.1f}s on this machine")
