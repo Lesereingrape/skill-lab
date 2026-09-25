@@ -56,7 +56,7 @@ def test_the_quickstart_seed_count_matches_the_study():
 
 def test_the_rerun_note_names_the_runtime_the_artifact_records():
     """Of the two runtimes the diff sentence pairs, only the published one is checkable."""
-    published = _current(r"published ([\d.]+)s")
+    published = _current(r"published\s+([\d.]+)s(?![\d])")
     assert float(published) == DATA["runtime_sec"], (
         f"README says the published run took {published}s, "
         f"results/skills.json records {DATA['runtime_sec']}s")
