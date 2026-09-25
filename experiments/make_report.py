@@ -1,9 +1,9 @@
 """Render the README results block directly from results/skills.json.
 
 Every number is machine-generated from the committed artifact: run
-``python experiments/run_study.py`` then ``python experiments/make_report.py`` and
-paste the output between the RESULTS markers. A test asserts the README already
-equals this, so nothing is hand-copied.
+``python experiments/run_study.py --out PATH`` then
+``python experiments/make_report.py --write`` to splice the block between the RESULTS
+markers. A test asserts the README already equals this, so nothing is hand-copied.
 """
 
 from __future__ import annotations
@@ -62,6 +62,12 @@ def build(data: dict) -> str:
         f"{s['episodes']} episodes.*"
     )
     out.append("")
+    env = data["environment"]
+    out.append(f"- measured under: Python {env['python']} on {env['platform']}, "
+               f"{env['device']} — search cost here is an integer count, so the "
+               "published curve carries no float-reduction ambiguity; what it did "
+               "carry, until this run, was set-iteration order (see the note under "
+               "the tables)")
     out.append(f"- curriculum: **{cfg['n_tasks']}** keyworlds per seed, difficulty "
                "(rooms / locked doors / shortcut corridors) ramping with position")
     out.append(f"- skills are distilled from **verified** plans only, with a max "
@@ -125,14 +131,36 @@ def build(data: dict) -> str:
     out.append("- The domain is a deliberately minimal deterministic keyworld, and the "
                "planner is exhaustive BFS. The point is *verifiable* self-improvement of "
                "planning efficiency, not a claim about LLM agents in the wild.")
-    out.append("- The average cost cut (~12%) is real and reproducible but modest: "
-               "short-window macros shortcut local structure (walks, door-passing) and "
-               "cannot fix the combinatorial key-fetch ordering that dominates the "
-               "hardest worlds. Reporting a bigger number here would be dishonest.")
+    out.append(f"- The average cost cut ({s['cost_reduction_pct']:.0f}%) is real and "
+               "reproducible but modest: short-window macros shortcut local structure "
+               "(walks, door-passing) and cannot fix the combinatorial key-fetch "
+               "ordering that dominates the hardest worlds. Reporting a bigger number "
+               "here would be dishonest.")
     out.append("- Budgeted solve-rate depends on the chosen budget; we fix it once at "
                "the median cold cost rather than tuning it to maximise the gap.")
     return "\n".join(out)
 
 
+def _write(path: Path, block: str) -> None:
+    text = path.read_text(encoding="utf-8")
+    start, end = "<!-- RESULTS:START -->", "<!-- RESULTS:END -->"
+    head, _, rest = text.partition(start)
+    _, _, tail = rest.partition(end)
+    nl = "\n"
+    path.write_text(f"{head}{start}{nl}{block}{nl}{end}{tail}", encoding="utf-8")
+
+
 if __name__ == "__main__":
-    print(build(json.loads(Path("results/skills.json").read_text(encoding="utf-8"))))
+    import argparse
+
+    ap = argparse.ArgumentParser(prog="make_report")
+    ap.add_argument("--write", action="store_true",
+                    help="splice the block into README.md instead of printing it")
+    ap.add_argument("--results", default="results/skills.json")
+    args = ap.parse_args()
+    rendered = build(json.loads(Path(args.results).read_text(encoding="utf-8")))
+    if args.write:
+        _write(Path("README.md"), rendered)
+        print("README results block rewritten")
+    else:
+        print(rendered)

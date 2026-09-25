@@ -44,7 +44,12 @@ def _abstractable(token) -> bool:
 @dataclass(frozen=True)
 class Skill:
     name: str
-    preconditions: frozenset  # literal templates, tokens may be vars
+    # Literal templates in a canonical order. They *look* like a set, and were one,
+    # but a frozenset iterates in hash order: the first binding :func:`applicable`
+    # returns and the positional variable renaming in :meth:`signature` then depend
+    # on PYTHONHASHSEED, which makes the learned library — and every published
+    # expansion count — differ between two runs of the same seed.
+    preconditions: tuple
     body: tuple  # action templates; every var must appear in a precondition
 
     def signature(self) -> tuple:
@@ -62,7 +67,7 @@ class Skill:
             return f"#{ids[tok]}"
 
         body_shape = tuple(tuple(canon(t) for t in a) for a in self.body)
-        pre_shape = frozenset(tuple(canon(t) for t in p) for p in self.preconditions)
+        pre_shape = tuple(tuple(canon(t) for t in p) for p in self.preconditions)
         return (body_shape, pre_shape)
 
 
@@ -92,7 +97,14 @@ def applicable(skill: Skill, state_literals: frozenset, facts: frozenset = froze
     corridor, which corridors are open), matched alongside the state's fluents so a
     skill can bind the far side of a door before the robot has crossed it.
     """
-    avail = state_literals | facts
+    return _first_grounding(skill, sorted(state_literals | facts, key=repr))
+
+
+def _first_grounding(skill: Skill, avail: list):
+    """``avail`` must arrive in canonical order, and which of several equally valid
+    groundings wins decides which plan the library later proposes — so the caller
+    sorts once per state instead of once per skill.
+    """
     bindings = [{}]
     for template in skill.preconditions:
         nxt = []
@@ -112,10 +124,11 @@ def applicable(skill: Skill, state_literals: frozenset, facts: frozenset = froze
 
 def grounded_macros(skills, state_literals, facts: frozenset = frozenset()):
     """All multi-step shortcuts usable right now, as grounded primitive-action tuples."""
+    avail = sorted(state_literals | facts, key=repr)
     seen = set()
     out = []
     for s in skills:
-        body = applicable(s, state_literals, facts)
+        body = _first_grounding(s, avail)
         if body and body not in seen:
             seen.add(body)
             out.append(body)
@@ -234,7 +247,9 @@ def _to_templates(pres, window):
     def map_lit(lit):
         return (lit[0], *(var(t) for t in lit[1:]))
 
-    return frozenset(map_lit(p) for p in pres), tuple(map_lit(a) for a in window)
+    # sorted, not a frozenset: see the Skill.preconditions comment
+    return (tuple(sorted((map_lit(p) for p in pres), key=repr)),
+            tuple(map_lit(a) for a in window))
 
 
 def _window_productive(window, state_before):

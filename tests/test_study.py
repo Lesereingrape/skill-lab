@@ -18,7 +18,7 @@ def test_run_seed_reuse_plans_are_all_valid():
 
 def test_summary_reports_cost_reduction_and_soundness():
     per_seed = [run_seed(s) for s in (0, 1)]
-    results = build_results(per_seed, runtime=0.0)
+    results = build_results(per_seed, runtime=0.0, seeds=(0, 1))
     s = results["summary"]
     assert s["reuse_invalid_plans"] == 0
     assert s["mean_reuse_cost"] <= s["mean_cold_cost"]

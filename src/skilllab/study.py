@@ -21,8 +21,10 @@ because skills only ever *shortcut* search, never replace its verification).
 
 from __future__ import annotations
 
+import platform
 import random
 import statistics
+import sys
 from dataclasses import dataclass
 
 from .env import World, execute, make_world
@@ -151,14 +153,37 @@ def aggregate(per_seed: list[list[TaskRow]]) -> dict:
     }
 
 
-def build_results(per_seed, runtime: float) -> dict:
+def build_results(per_seed, runtime: float, seeds=SEEDS) -> dict:
+    """Assemble the artifact. ``seeds`` describes ``per_seed``, so a caller that ran
+    a subset (a quick test, say) publishes a config that matches it instead of
+    claiming the full seed set."""
     return {
         "config": {
-            "seeds": list(SEEDS),
+            "seeds": list(seeds),
             "n_tasks": N_TASKS,
             "budget": BUDGET,
             "max_window": MAX_WINDOW,
         },
+        "environment": environment(),
         "summary": aggregate(per_seed),
+        # every episode of every seed, so the published means can be recomputed
+        # rather than believed
+        "per_seed": {str(seed): [row.__dict__ for row in rows]
+                     for seed, rows in zip(seeds, per_seed, strict=True)},
         "runtime_sec": round(runtime, 1),
+    }
+
+
+def environment() -> dict:
+    """The machine the curve was measured on.
+
+    This study is exact integer search, so unlike the training labs its numbers do
+    not depend on float reduction order or thread count — but "reproducible" still
+    has to say *where*, and a reader on a different Python cannot otherwise tell a
+    real difference from an environment difference.
+    """
+    return {
+        "python": sys.version.split()[0],
+        "platform": platform.platform(),
+        "device": "cpu (exact integer search; no float reduction order involved)",
     }

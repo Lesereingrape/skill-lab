@@ -9,13 +9,18 @@
     "budget": 70,
     "max_window": 3
   },
+  "environment": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "device": "cpu (exact integer search; no float reduction order involved)"
+  },
   "summary": {
     "mean_cold_cost": 88.9,
-    "mean_reuse_cost": 78.4,
-    "cost_reduction_pct": 11.8,
+    "mean_reuse_cost": 77.1,
+    "cost_reduction_pct": 13.3,
     "cold_solve_rate": 0.552,
-    "reuse_solve_rate": 0.635,
-    "final_libsize": 25.3,
+    "reuse_solve_rate": 0.625,
+    "final_libsize": 30.3,
     "reuse_invalid_plans": 0,
     "episodes": 96,
     "difficulty": [
@@ -23,7 +28,7 @@
         "doors": 2,
         "n": 18,
         "cold_cost": 17.9,
-        "reuse_cost": 14.7,
+        "reuse_cost": 15.4,
         "cold_sr": 1.0,
         "reuse_sr": 1.0
       },
@@ -31,7 +36,7 @@
         "doors": 3,
         "n": 18,
         "cold_cost": 42.0,
-        "reuse_cost": 35.1,
+        "reuse_cost": 33.1,
         "cold_sr": 0.944,
         "reuse_sr": 1.0
       },
@@ -39,7 +44,7 @@
         "doors": 4,
         "n": 18,
         "cold_cost": 70.0,
-        "reuse_cost": 60.8,
+        "reuse_cost": 59.4,
         "cold_sr": 0.667,
         "reuse_sr": 0.778
       },
@@ -47,7 +52,7 @@
         "doors": 5,
         "n": 18,
         "cold_cost": 103.7,
-        "reuse_cost": 87.2,
+        "reuse_cost": 86.2,
         "cold_sr": 0.333,
         "reuse_sr": 0.5
       },
@@ -55,15 +60,15 @@
         "doors": 6,
         "n": 18,
         "cold_cost": 168.6,
-        "reuse_cost": 154.4,
+        "reuse_cost": 150.7,
         "cold_sr": 0.0,
-        "reuse_sr": 0.111
+        "reuse_sr": 0.056
       },
       {
         "doors": 7,
         "n": 6,
         "cold_cost": 215.8,
-        "reuse_cost": 198.5,
+        "reuse_cost": 198.8,
         "cold_sr": 0.0,
         "reuse_sr": 0.0
       }
@@ -90,39 +95,39 @@
         "rooms": 6,
         "doors": 2,
         "cold_cost": 19.0,
-        "reuse_cost": 12.7,
-        "libsize": 11.3
+        "reuse_cost": 15.7,
+        "libsize": 10.7
       },
       {
         "index": 3,
         "rooms": 7,
         "doors": 2,
         "cold_cost": 16.0,
-        "reuse_cost": 12.3,
-        "libsize": 11.7
+        "reuse_cost": 12.0,
+        "libsize": 11.0
       },
       {
         "index": 4,
         "rooms": 7,
         "doors": 2,
         "cold_cost": 21.3,
-        "reuse_cost": 15.0,
-        "libsize": 11.7
+        "reuse_cost": 17.3,
+        "libsize": 11.3
       },
       {
         "index": 5,
         "rooms": 7,
         "doors": 2,
         "cold_cost": 17.7,
-        "reuse_cost": 16.3,
-        "libsize": 13.3
+        "reuse_cost": 15.7,
+        "libsize": 12.7
       },
       {
         "index": 6,
         "rooms": 8,
         "doors": 3,
         "cold_cost": 45.7,
-        "reuse_cost": 43.0,
+        "reuse_cost": 42.3,
         "libsize": 14.3
       },
       {
@@ -130,23 +135,23 @@
         "rooms": 8,
         "doors": 3,
         "cold_cost": 36.0,
-        "reuse_cost": 27.3,
-        "libsize": 15.3
+        "reuse_cost": 22.0,
+        "libsize": 15.7
       },
       {
         "index": 8,
         "rooms": 8,
         "doors": 3,
         "cold_cost": 37.7,
-        "reuse_cost": 28.0,
-        "libsize": 16.0
+        "reuse_cost": 30.0,
+        "libsize": 16.3
       },
       {
         "index": 9,
         "rooms": 9,
         "doors": 3,
         "cold_cost": 45.3,
-        "reuse_cost": 38.0,
+        "reuse_cost": 36.0,
         "libsize": 18.0
       },
       {
@@ -154,31 +159,31 @@
         "rooms": 9,
         "doors": 3,
         "cold_cost": 33.7,
-        "reuse_cost": 26.7,
-        "libsize": 18.0
+        "reuse_cost": 22.7,
+        "libsize": 18.3
       },
       {
         "index": 11,
         "rooms": 9,
         "doors": 3,
         "cold_cost": 53.7,
-        "reuse_cost": 47.3,
-        "libsize": 18.0
+        "reuse_cost": 45.7,
+        "libsize": 18.3
       },
       {
         "index": 12,
         "rooms": 10,
         "doors": 4,
         "cold_cost": 49.3,
-        "reuse_cost": 46.3,
-        "libsize": 19.3
+        "reuse_cost": 44.3,
+        "libsize": 18.7
       },
       {
         "index": 13,
         "rooms": 10,
         "doors": 4,
         "cold_cost": 61.0,
-        "reuse_cost": 51.7,
+        "reuse_cost": 50.7,
         "libsize": 21.0
       },
       {
@@ -186,64 +191,64 @@
         "rooms": 10,
         "doors": 4,
         "cold_cost": 114.7,
-        "reuse_cost": 93.0,
-        "libsize": 21.3
+        "reuse_cost": 99.0,
+        "libsize": 21.7
       },
       {
         "index": 15,
         "rooms": 11,
         "doors": 4,
         "cold_cost": 64.0,
-        "reuse_cost": 54.0,
-        "libsize": 22.0
+        "reuse_cost": 51.7,
+        "libsize": 23.0
       },
       {
         "index": 16,
         "rooms": 11,
         "doors": 4,
         "cold_cost": 74.7,
-        "reuse_cost": 71.0,
-        "libsize": 23.3
+        "reuse_cost": 66.7,
+        "libsize": 24.0
       },
       {
         "index": 17,
         "rooms": 11,
         "doors": 4,
         "cold_cost": 56.3,
-        "reuse_cost": 48.7,
-        "libsize": 23.7
+        "reuse_cost": 44.3,
+        "libsize": 24.0
       },
       {
         "index": 18,
         "rooms": 11,
         "doors": 5,
         "cold_cost": 118.3,
-        "reuse_cost": 105.7,
-        "libsize": 24.0
+        "reuse_cost": 100.0,
+        "libsize": 24.7
       },
       {
         "index": 19,
         "rooms": 11,
         "doors": 5,
         "cold_cost": 83.0,
-        "reuse_cost": 60.0,
-        "libsize": 24.0
+        "reuse_cost": 59.0,
+        "libsize": 24.7
       },
       {
         "index": 20,
         "rooms": 11,
         "doors": 5,
         "cold_cost": 146.3,
-        "reuse_cost": 131.3,
-        "libsize": 24.0
+        "reuse_cost": 130.0,
+        "libsize": 25.3
       },
       {
         "index": 21,
         "rooms": 11,
         "doors": 5,
         "cold_cost": 107.3,
-        "reuse_cost": 73.7,
-        "libsize": 24.3
+        "reuse_cost": 78.0,
+        "libsize": 26.3
       },
       {
         "index": 22,
@@ -251,81 +256,1145 @@
         "doors": 5,
         "cold_cost": 69.0,
         "reuse_cost": 62.3,
-        "libsize": 24.3
+        "libsize": 26.3
       },
       {
         "index": 23,
         "rooms": 11,
         "doors": 5,
         "cold_cost": 98.0,
-        "reuse_cost": 90.3,
-        "libsize": 24.7
+        "reuse_cost": 88.0,
+        "libsize": 26.7
       },
       {
         "index": 24,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 161.7,
-        "reuse_cost": 151.0,
-        "libsize": 24.7
+        "reuse_cost": 141.7,
+        "libsize": 26.7
       },
       {
         "index": 25,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 153.3,
-        "reuse_cost": 131.3,
-        "libsize": 24.7
+        "reuse_cost": 130.3,
+        "libsize": 26.7
       },
       {
         "index": 26,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 169.7,
-        "reuse_cost": 153.3,
-        "libsize": 24.7
+        "reuse_cost": 156.0,
+        "libsize": 28.0
       },
       {
         "index": 27,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 152.3,
-        "reuse_cost": 145.7,
-        "libsize": 24.7
+        "reuse_cost": 144.0,
+        "libsize": 28.3
       },
       {
         "index": 28,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 132.7,
-        "reuse_cost": 119.7,
-        "libsize": 24.7
+        "reuse_cost": 110.7,
+        "libsize": 29.7
       },
       {
         "index": 29,
         "rooms": 11,
         "doors": 6,
         "cold_cost": 242.0,
-        "reuse_cost": 225.3,
-        "libsize": 25.3
+        "reuse_cost": 221.3,
+        "libsize": 30.3
       },
       {
         "index": 30,
         "rooms": 11,
         "doors": 7,
         "cold_cost": 262.7,
-        "reuse_cost": 248.0,
-        "libsize": 25.3
+        "reuse_cost": 240.3,
+        "libsize": 30.3
       },
       {
         "index": 31,
         "rooms": 11,
         "doors": 7,
         "cold_cost": 169.0,
-        "reuse_cost": 149.0,
-        "libsize": 25.3
+        "reuse_cost": 157.3,
+        "libsize": 30.3
       }
     ]
   },
-  "runtime_sec": 37.3
+  "per_seed": {
+    "0": [
+      {
+        "index": 0,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 27,
+        "reuse_cost": 27,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 6
+      },
+      {
+        "index": 1,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 14,
+        "reuse_cost": 12,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 10
+      },
+      {
+        "index": 2,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 14,
+        "reuse_cost": 7,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 10
+      },
+      {
+        "index": 3,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 17,
+        "reuse_cost": 13,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 11
+      },
+      {
+        "index": 4,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 11,
+        "reuse_cost": 7,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 11
+      },
+      {
+        "index": 5,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 29,
+        "reuse_cost": 29,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 12
+      },
+      {
+        "index": 6,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 51,
+        "reuse_cost": 51,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 13
+      },
+      {
+        "index": 7,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 24,
+        "reuse_cost": 15,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 13
+      },
+      {
+        "index": 8,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 30,
+        "reuse_cost": 19,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 13
+      },
+      {
+        "index": 9,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 61,
+        "reuse_cost": 53,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 10,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 23,
+        "reuse_cost": 10,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 11,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 19,
+        "reuse_cost": 13,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 12,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 66,
+        "reuse_cost": 63,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 13,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 44,
+        "reuse_cost": 36,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 14,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 194,
+        "reuse_cost": 175,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 15,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 78,
+        "reuse_cost": 69,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 23
+      },
+      {
+        "index": 16,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 58,
+        "reuse_cost": 58,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 17,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 57,
+        "reuse_cost": 54,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 18,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 160,
+        "reuse_cost": 128,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 19,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 134,
+        "reuse_cost": 100,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 20,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 114,
+        "reuse_cost": 103,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 21,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 119,
+        "reuse_cost": 95,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 22,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 69,
+        "reuse_cost": 63,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 23,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 78,
+        "reuse_cost": 70,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 24,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 306,
+        "reuse_cost": 280,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 25,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 133,
+        "reuse_cost": 110,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 28
+      },
+      {
+        "index": 26,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 95,
+        "reuse_cost": 73,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 29
+      },
+      {
+        "index": 27,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 257,
+        "reuse_cost": 246,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 28,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 81,
+        "reuse_cost": 71,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 29,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 367,
+        "reuse_cost": 347,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 31
+      },
+      {
+        "index": 30,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 418,
+        "reuse_cost": 409,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 31
+      },
+      {
+        "index": 31,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 241,
+        "reuse_cost": 232,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 31
+      }
+    ],
+    "1": [
+      {
+        "index": 0,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 8,
+        "reuse_cost": 8,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 4
+      },
+      {
+        "index": 1,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 27,
+        "reuse_cost": 25,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 11
+      },
+      {
+        "index": 2,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 27,
+        "reuse_cost": 24,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 13
+      },
+      {
+        "index": 3,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 16,
+        "reuse_cost": 10,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 13
+      },
+      {
+        "index": 4,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 33,
+        "reuse_cost": 25,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 5,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 14,
+        "reuse_cost": 9,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 14
+      },
+      {
+        "index": 6,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 44,
+        "reuse_cost": 41,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 15
+      },
+      {
+        "index": 7,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 37,
+        "reuse_cost": 24,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 15
+      },
+      {
+        "index": 8,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 39,
+        "reuse_cost": 38,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 16
+      },
+      {
+        "index": 9,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 18,
+        "reuse_cost": 15,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 19
+      },
+      {
+        "index": 10,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 29,
+        "reuse_cost": 24,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 20
+      },
+      {
+        "index": 11,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 73,
+        "reuse_cost": 61,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 20
+      },
+      {
+        "index": 12,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 36,
+        "reuse_cost": 36,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 13,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 43,
+        "reuse_cost": 33,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 14,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 95,
+        "reuse_cost": 72,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 15,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 64,
+        "reuse_cost": 53,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 16,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 110,
+        "reuse_cost": 93,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 17,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 78,
+        "reuse_cost": 54,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 18,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 59,
+        "reuse_cost": 52,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 19,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 66,
+        "reuse_cost": 37,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 20,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 200,
+        "reuse_cost": 191,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 22
+      },
+      {
+        "index": 21,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 121,
+        "reuse_cost": 86,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 22,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 69,
+        "reuse_cost": 63,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 23,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 76,
+        "reuse_cost": 65,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 24,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 79,
+        "reuse_cost": 51,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 25,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 210,
+        "reuse_cost": 176,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 26,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 200,
+        "reuse_cost": 193,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 27,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 103,
+        "reuse_cost": 95,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 28,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 126,
+        "reuse_cost": 119,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 29,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 101,
+        "reuse_cost": 87,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 30,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 168,
+        "reuse_cost": 135,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 31,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 112,
+        "reuse_cost": 104,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      }
+    ],
+    "2": [
+      {
+        "index": 0,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 13,
+        "reuse_cost": 13,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 7
+      },
+      {
+        "index": 1,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 11,
+        "reuse_cost": 10,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 9
+      },
+      {
+        "index": 2,
+        "rooms": 6,
+        "doors": 2,
+        "cold_cost": 16,
+        "reuse_cost": 16,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 9
+      },
+      {
+        "index": 3,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 15,
+        "reuse_cost": 13,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 9
+      },
+      {
+        "index": 4,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 20,
+        "reuse_cost": 20,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 9
+      },
+      {
+        "index": 5,
+        "rooms": 7,
+        "doors": 2,
+        "cold_cost": 10,
+        "reuse_cost": 9,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 12
+      },
+      {
+        "index": 6,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 42,
+        "reuse_cost": 35,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 15
+      },
+      {
+        "index": 7,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 47,
+        "reuse_cost": 27,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 19
+      },
+      {
+        "index": 8,
+        "rooms": 8,
+        "doors": 3,
+        "cold_cost": 44,
+        "reuse_cost": 33,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 20
+      },
+      {
+        "index": 9,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 57,
+        "reuse_cost": 40,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 10,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 49,
+        "reuse_cost": 34,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 11,
+        "rooms": 9,
+        "doors": 3,
+        "cold_cost": 69,
+        "reuse_cost": 63,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 12,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 46,
+        "reuse_cost": 34,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 13,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 96,
+        "reuse_cost": 83,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 21
+      },
+      {
+        "index": 14,
+        "rooms": 10,
+        "doors": 4,
+        "cold_cost": 55,
+        "reuse_cost": 50,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 23
+      },
+      {
+        "index": 15,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 50,
+        "reuse_cost": 33,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 16,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 56,
+        "reuse_cost": 49,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 17,
+        "rooms": 11,
+        "doors": 4,
+        "cold_cost": 34,
+        "reuse_cost": 25,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 18,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 136,
+        "reuse_cost": 120,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 19,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 49,
+        "reuse_cost": 40,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 25
+      },
+      {
+        "index": 20,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 125,
+        "reuse_cost": 96,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 21,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 82,
+        "reuse_cost": 53,
+        "cold_solved": false,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 22,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 69,
+        "reuse_cost": 61,
+        "cold_solved": true,
+        "reuse_solved": true,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 23,
+        "rooms": 11,
+        "doors": 5,
+        "cold_cost": 140,
+        "reuse_cost": 129,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 24,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 100,
+        "reuse_cost": 94,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 25,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 117,
+        "reuse_cost": 105,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 26
+      },
+      {
+        "index": 26,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 214,
+        "reuse_cost": 202,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 29
+      },
+      {
+        "index": 27,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 97,
+        "reuse_cost": 91,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 29
+      },
+      {
+        "index": 28,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 191,
+        "reuse_cost": 142,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 29
+      },
+      {
+        "index": 29,
+        "rooms": 11,
+        "doors": 6,
+        "cold_cost": 258,
+        "reuse_cost": 230,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 30,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 202,
+        "reuse_cost": 177,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      },
+      {
+        "index": 31,
+        "rooms": 11,
+        "doors": 7,
+        "cold_cost": 154,
+        "reuse_cost": 136,
+        "cold_solved": false,
+        "reuse_solved": false,
+        "reuse_valid": true,
+        "libsize": 30
+      }
+    ]
+  },
+  "runtime_sec": 34.5
 }

@@ -33,6 +33,6 @@ def test_readme_matches_committed_results():
     rendered = _load_renderer().build(data).strip()
     readme_block = _block((ROOT / "README.md").read_text(encoding="utf-8"))
     assert readme_block == rendered, (
-        "README results drift: run `python experiments/make_report.py` and paste the "
-        "output into the RESULTS block."
+        "README results drift: run `python experiments/make_report.py --write` to "
+        "splice the rendered block back into README.md."
     )
